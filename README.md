@@ -15,8 +15,28 @@
 
 
 #### Mediciones del pincher
+Inicialmente es pertinente caracterizar el Pincher para poder comparar los resultados reales con resultados teóricos previamente obtenidos. Para ello se hace uso de Matlab y el Toolbox de Peter Corke con cálculos de cinemática directa por parámetros de Denavit-Hartenberg. 
+
+Se requiere obtener ciertas mediciones del Pincher, las cuales están asociadas a las distancias entre ejes articulares, ya que son necesarios para formular la tabla de parámetros que describen el Robot. La siguiente imagen muestra las medidas requeridas:
+
+![robot medidas](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/robot.png?raw=true)
+
+Las cuales resultan como L1=40.6 mm, L2=L3=107 mm y L4=69.5 mm. Cabe destacar que desde el Pincher tiene el eje de la primera articulación a una cierta altura debido a la base que tiene, sin embargo, acá no se tiene en cuenta, por ello el robot no tiene en cuenta como medida el tamaño de la base. 
 
 #### Tabla DHstd
+Ahora bien, se requiere ubicar los marcos de referencia para extraer la tabla, siguiendo la convención DH estándar, obteniendo:
+
+![robot marcos](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/dh robot.png?raw=true)
+
+Con lo que se puede plantear la siguiente tabla de parámetros DHstd:
+
+| Theta    | d | a | alpha | Offset |Articulación 5 |
+| :----:   | :----:      | :----:     | :----:     | :----:     |
+|Theta 1         |  L1        |    0     |   90     |    0°     | 
+|Theta 2         |    0      |     L2    |    0°    |    90°     |   
+|Theta 3         |    0      |     L3   |  0°     |    0°     | 
+|Theta 4         |      0    |     0    | 90°     |     90°    |   
+|Theta 5         |      L4    |     0    | 0°        |     0°    |  
 
 #### ToolBox
 
