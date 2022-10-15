@@ -155,11 +155,15 @@ Click en la siguiente página para dirigirse al video:
 
 ![Imag 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP1.png?raw=true)
 
+Comparándo este resultado con el que se generó en el Toolbox se puede identificar que son equivalentes.
+
 #### Caso 2
 
 ![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS2.png?raw=true)
 
 ![Imag 2](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP2.png?raw=true)
+
+Comparándo este resultado con el que se generó en el Toolbox se puede identificar que son equivalentes.
 
 #### Caso 3
 
@@ -167,11 +171,15 @@ Click en la siguiente página para dirigirse al video:
 
 ![Imag 3](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP3.png?raw=true)
 
+Comparándo este resultado con el que se generó en el Toolbox se puede identificar que son equivalentes.
+
 #### Caso 4
 
 ![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS4.png?raw=true)
 
 ![Imag 4](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP4.png?raw=true)
+
+Comparándo este resultado con el que se generó en el Toolbox se puede identificar que son equivalentes.
 
  
  
