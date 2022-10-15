@@ -56,6 +56,10 @@ Ya teniendo esto establecido, se puede empezar con el código realizado en pytho
 #### Python
 Para el desarrollo de esta práctica se decidió trabajar con python en vez de Matlab ya que se considera de este modo más facil la configuración. Además, se diseñan rutinas donde se envía el pincher a home al inicio, y luego se dirije a la pose deseada. También se realiza la lectura de datos de los ángulos reales del pincher para confirmar que esté ubicado correctamente, junto con el cálculo del error RMS asociado a cada pose.
 
+Cabe resaltar que se adjunta la carpeta de dynamixel_one_motor de donde se ejecutan los archivos
+
+
+en archivo .py de este repositorio se encuentra con comentarios todo el código. A continuación solo se realizan unas explicaciones de las rutínas involucradas en dicho archivo.
 
 ##### Lectura de sensores
 
@@ -129,7 +133,6 @@ for i in range(5):
 Torques es un arreglo con los valores asignados.
 
 
-
 #### Ejecución 
 
 Con todo y lo anterior, se debe ejecutar el archivo lab4.py. Luego, al usuario le aparece en pantalla las 4 opciones a ejecutar y debe seleccionar alguna pulsando un número de 1 a 4 y darle enter. Luego empieza la rutina de ir al home del robot sin intermedios y luego a la rutina establecida con 4 puntos intermedios para cada articulación. En consola aparece el punto de ejecución en el que está, y el error de posición angular del home y de la posición final. A continuación se muestra el ejemplo de esta impresión inicial en consola:
@@ -138,35 +141,37 @@ Con todo y lo anterior, se debe ejecutar el archivo lab4.py. Luego, al usuario l
  
 ![Consola inicial](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/inicio.png?raw=true)
 
-### Resultados
+### Resultados finales
 
 #### Video
 
-[![Alt text](https://i9.ytimg.com/vi_webp/i1MiGquxebQ/mqdefault.webp?sqp=COCCqJoG&rs=AOn4CLCMm6SIbKCXUOZCQjj9puunpE8E6g)](https://www.youtube.com/watch?v=i1MiGquxebQ)
+Click en la siguiente página para dirigirse al video:
 
-
-
+[![video](https://i9.ytimg.com/vi_webp/i1MiGquxebQ/mqdefault.webp?sqp=COCCqJoG&rs=AOn4CLCMm6SIbKCXUOZCQjj9puunpE8E6g)](https://www.youtube.com/watch?v=i1MiGquxebQ)
 
 #### Caso 1
 
-Imágen caso 1:
+![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS1.png?raw=true)
 
-
+![Imag 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP1.png?raw=true)
 
 #### Caso 2
 
-Imágen caso 2:
+![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS2.png?raw=true)
 
+![Imag 2](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP2.png?raw=true)
 
 #### Caso 3
 
-Imágen caso 3:
+![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS3.png?raw=true)
 
+![Imag 3](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP3.png?raw=true)
 
 #### Caso 4
 
-Imágen caso 4:
+![Resultados consola caso 1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/SS4.png?raw=true)
 
+![Imag 4](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/VP4.png?raw=true)
 
  
  
