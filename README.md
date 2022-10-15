@@ -37,7 +37,7 @@ A continuación se muestra todo el procedimiento realizado para el desarrollo de
 
 #### Datos iniciales
 
-AHora bien, lo primero que se debe establecer es que hay ciertas limitantes que se dieron. Debido a que en código uno lo que puede realizar es cambiar los valores de registro del pincher, en este caso de 0 a 1023 para los registros de posición que van de un rango de 0° a 300°, es necesario conocer los valores puntuales de los registros para obtener estas posiciones. Esto se logra mediante el uso del Dynamixel Wizard. AL llevar el Picher a la posición final que queremos, se pueden extraer los valores de los registros directamente y almacenarlos para su implementación futura. Dicho esto, a continuación se muestran los valores de los registros teniendo en cuenta las poses deseadas y el Home previamente establecido.
+Ahora bien, lo primero que se debe establecer es que hay ciertas limitantes que se dieron. Debido a que en código uno lo que puede realizar es cambiar los valores de registro del pincher, en este caso de 0 a 1023 para los registros de posición que van de un rango de 0° a 300°, es necesario conocer los valores puntuales de los registros para obtener estas posiciones. Esto se logra mediante el uso del Dynamixel Wizard. AL llevar el Picher a la posición final que queremos, se pueden extraer los valores de los registros directamente y almacenarlos para su implementación futura. Dicho esto, a continuación se muestran los valores de los registros teniendo en cuenta las poses deseadas y el Home previamente establecido.
 
 
 | Pose     | Registro M1 |Registro M2 |Registro M3 |Registro M4 |Registro M5 |
@@ -72,7 +72,7 @@ def listener():
     rospy.Subscriber("/dynamixel_workbench/joint_states", JointState,callback)
 ```
 
-COmo se puede ver, se inicia el nodo con el valor anonymous=True en caso de que se requiera agregar más nodos. Y, según la función callback, se entiende que la variable global PosActual es una lista de 5 valores, cada uno con la lectura de los ángulos en radianes vistos desde el home preestablecido del pincher. Debido a que nuestra articulación 3 está desfasada +90° por el offset de home establecido, estos 90° se deben restar de este valor. Dicho esto, se tiene una variable global que siempre se va a actualizar cuando el SUbscriber recibe nuevos mensajes de posición angular de las articulaciones.
+Como se puede ver, se inicia el nodo con el valor anonymous=True en caso de que se requiera agregar más nodos. Y, según la función callback, se entiende que la variable global PosActual es una lista de 5 valores, cada uno con la lectura de los ángulos en radianes vistos desde el home preestablecido del pincher. Debido a que nuestra articulación 3 está desfasada +90° por el offset de home establecido, estos 90° se deben restar de este valor. Dicho esto, se tiene una variable global que siempre se va a actualizar cuando el SUbscriber recibe nuevos mensajes de posición angular de las articulaciones.
 
 
 #####  Movimiento de articulaciones
@@ -111,9 +111,9 @@ print('Finalizada la rutina.')
 printL(PosActual,CasoDeg)
 ```
 
-Como se puede ver, se realizan los movimientos de de manera individual y con movimientos intermedios para no generar movimientos bruscos en el Pincher, esto con la función movPartido, que uno puede indicar cuantos subrecorridos se van a realizar, en este caso 5, incluyendo hasta llegar a la posición final.
+Dicho esto, se realizan los movimientos de de manera individual y con movimientos intermedios para no generar movimientos bruscos en el Pincher, esto con la función movPartido, que uno puede indicar cuantos subrecorridos se van a realizar, en este caso 5, incluyendo hasta llegar a la posición final.
 
-COn todo esto, se pueden realizar todas las rutinas deseadas, desde ir a home, hasta a una posición arbitraria asociada a una lista de 5 valores enteros de 0 a 1023.
+De este modo, se pueden realizar todas las rutinas deseadas, desde ir a home, hasta a una posición arbitraria asociada a una lista de 5 valores enteros de 0 a 1023.
 
 
 
@@ -128,13 +128,44 @@ for i in range(5):
 
 Torques es un arreglo con los valores asignados.
 
+
+
 #### Ejecución 
 
-##### 
-
-##### 
+Con todo y lo anterior, se debe ejecutar el archivo lab4.py. Luego, al usuario le aparece en pantalla las 4 opciones a ejecutar y debe seleccionar alguna pulsando un número de 1 a 4 y darle enter. Luego empieza la rutina de ir al home del robot sin intermedios y luego a la rutina establecida con 4 puntos intermedios para cada articulación. En consola aparece el punto de ejecución en el que está, y el error de posición angular del home y de la posición final. A continuación se muestra el ejemplo de esta impresión inicial en consola:
+ 
+ 
+ 
+![Consola inicial](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/inicio.png?raw=true)
 
 ### Resultados
+
+#### Video
+
+[![Alt text](https://i9.ytimg.com/vi_webp/i1MiGquxebQ/mqdefault.webp?sqp=COCCqJoG&rs=AOn4CLCMm6SIbKCXUOZCQjj9puunpE8E6g)](https://www.youtube.com/watch?v=i1MiGquxebQ)
+
+
+
+
+#### Caso 1
+
+Imágen caso 1:
+
+
+
+#### Caso 2
+
+Imágen caso 2:
+
+
+#### Caso 3
+
+Imágen caso 3:
+
+
+#### Caso 4
+
+Imágen caso 4:
 
 
  
