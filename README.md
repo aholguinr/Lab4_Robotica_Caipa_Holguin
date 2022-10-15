@@ -26,11 +26,11 @@ Las cuales resultan como L1=40.6 mm, L2=L3=107 mm y L4=69.5 mm. Cabe destacar qu
 #### Tabla DHstd
 Ahora bien, se requiere ubicar los marcos de referencia para extraer la tabla, siguiendo la convención DH estándar, obteniendo:
 
-![robot marcos](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/dh robot.png?raw=true)
+![robot marcos](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/dhrobot.png?raw=true)
 
 Con lo que se puede plantear la siguiente tabla de parámetros DHstd:
 
-| Theta    | d | a | alpha | Offset |Articulación 5 |
+| Theta    | d | a | alpha | Offset |
 | :----:   | :----:      | :----:     | :----:     | :----:     |
 |Theta 1         |  L1        |    0     |   90     |    0°     | 
 |Theta 2         |    0      |     L2    |    0°    |    90°     |   
