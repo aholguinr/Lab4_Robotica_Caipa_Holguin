@@ -96,6 +96,16 @@ sin(\theta_1)sin(\theta_5)+cos(\theta_5)(\sigma_2+\sigma_3) & cos(\theta_5)sin(\
 \end{pmatrix}
 ```
 
+En dónde se tiene que:
+
+```math
+\sigma_1=139cos(\theta_2+\theta_3+\theta_4)+214cos(\theta_2+\theta_3)+214cos(\theta_2)
+\sigma_2=\frac{sin(\theta_2-\theta_1+\theta_3+\theta_4)}{2}
+\sigma_3=\frac{sin(\theta_2+\theta_1+\theta_3+\theta_4)}{2}
+\sigma_4=cos(\theta_2-\theta_1+\theta_3+\theta_4)
+\sigma_5=cos(\theta_2+\theta_1+\theta_3+\theta_4)
+\sigma_6=sin(\theta_2+\theta_3+\theta_4)
+```
 
 ### Desarrollo código python
 
