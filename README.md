@@ -88,7 +88,12 @@ A_i=trotz(theta_i+offset)*transl(0,0,d_i)*transl(a_i,0,0)*trotx(alpha_i)
 ```
 Y finalmente multiplicarlas todas entre ellas. De forma simbólica se tiene la siguiente matriz:
 ```math
-a^2+b^2=c^2
+\begin{pmatrix}
+sin(\theta_1)sin(\theta_5)+cos(\theta_5)(\sigma_2+\sigma_3) & cos(\theta_5)sin(\theta_1)-sin(\theta_5)(\sigma_2+\sigma_3) & -\frac{\sigma_5}{2}-\frac{\sigma_4}{2} & -\frac{cos(\theta_1)}{20} \\
+-cos(\theta_1)sin(\theta_5)-\frac{cos(\theta_5)(\sigma_5-\sigma_4)}{2} & sin(\theta_5)(\frac{\sigma_5-\sigma_4}{2})-cos(\theta_1)cos(\theta_5) & \sigma_2-\sigma_3 & -\frac{sin(\theta_1)}{20} \\
+\frac{-cos(\theta_2+\theta_3+\theta_4+\theta_5)-cos(\theta_2+\theta_3+\theta_4-\theta_5)}{2} & \frac{sin(\theta_2+\theta_3+\theta_4+\theta_5)-sin(\theta_2+\theta_3+\theta_4-\theta_5)}{2} & -\sigma_6 & \frac{203}{50}+\frac{-107sin(\theta_2+\theta_3)-107sin(\theta_2)}{10}-\frac{139\sigma_6}{20} \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
 ```
 
 
