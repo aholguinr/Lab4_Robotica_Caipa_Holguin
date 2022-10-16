@@ -62,14 +62,14 @@ Robot.tool=MTH_TCP->o_6
 Otra cosa es que cada una de las articulaciones tiene el marco de referencia graficado, esto se hace con fin de verificar los parámetros y la correcta orientación de los marcos respecto a los movimientos que se ejercen en la vida real, para esto se hace uso del siguiente código, en donde la primera línea después del _Hold on_ permite graficar el último marco de referencia, el cual estará al graficar el robot en todas las posiciones para hacerse una idea de cómo queda la herramienta al mover las articulaciones, mientras que las demás sirven para graficar los otros marcos haciendo uso de las matrices intermedias de la cinemática directa, que en el toolbox se definen como matrices A y que se evaluan en un vector _q_ dado que tiene los valores solicitados de los ángulos de las articulaciones.
 
 ```
-Robot_q_1.plot(q_1,'view',[-30 30], 'jointdiam',2);
+Robot.plot(q,'view',[-30 30], 'jointdiam',2);
 hold on 
 trplot(eye(4),'rgb','arrow','length',15,'frame','0')
 axis([repmat([-40 40],1,2) 0 40])
-Robot_q_1.teach()
+Robot.teach()
 M= eye(4);
-for i=1:Robot_q_1.n-1
-    M = M * Li(i).A(q_1(i));
+for i=1:Robot.n-1
+    M = M * Li(i).A(q(i));
     trplot(M,'rgb','arrow','frame',num2str(i),'length',15)
 end
 hold off
@@ -108,6 +108,30 @@ En dónde se tiene que:
 \sigma_6&=sin(\theta_2+\theta_3+\theta_4)\\
 \end{align}
 ```
+
+Con todo y lo anterior, es posible graficar el robot en las posiciones solicitadas. Se tiene el robot en la primera posición:
+
+![robot p1](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/P1.png?raw=true)
+
+Ahí se puede apreciar el Teach Pendant generado virtualmente que permite modificar el robot en el momento sin la necesidad de estar graficandolo nuevamente en cada posición solicitada. Para ello se usa el comando:
+
+```
+Robot.teach()
+```
+
+Así pues, basta graficar el robot en Home y luego proceder a utilizar esto para ajustar a las posiciones deseadas. Para la posición 2:
+
+![robot p2](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/P2.png?raw=true)
+
+Para la posición 3:
+
+![robot p3](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/P3.png?raw=true)
+
+Y por último para la posición 4:
+
+![robot p4](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/P4.png?raw=true)
+
+La última tiene una particularidad y es que, la articulación final se encuentra en 10 grados, a diferencia de las demás posiciones en donde esta se encuentra en 0 grados, por lo tanto se que el marco de referencia del efector giró con respecto al eje z estos 10 grados, sin embargo en la vida real esto funciona de una forma un poco diferente, ya que el último servomotor lo que hace es transformar dicho movimiento rotacional de la articulación en un movimiento líneal del Gripper o pinza del Pincher, sin embargo para efectos de interpretación del toolbox se deja de dicha manera. 
 
 ### Desarrollo código python
 
