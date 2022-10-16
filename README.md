@@ -40,15 +40,56 @@ Con lo que se puede plantear la siguiente tabla de parámetros DHstd:
 
 #### ToolBox
 
+Es requerido graficar el robot en las posiciones que presenta la siguiente tabla:
 
 | Pose     | Articulación 1 |Articulación 2 |Articulación 3 |Articulación 4 |Articulación 5 |
 | :----:   | :----:      | :----:     | :----:     | :----:     | :----:     |
-|home      | 0°         |  0°       |   0°     |    0°     |      0°   |
+|Home      | 0°         |  0°       |   0°     |    0°     |      0°   |
 |1         |  -20°        |    20°     |   -20°     |    20°     |   0°      |
 |2         |    30°      |     -30°    |    30°    |    -30°     |     0°    |
 |3         |    -90°      |      15°   |  -55°      |    17°     |    0°     |
 |4         |      -90°    |     45°    |-55°        |     45°    |     10°    |
 
+Para lo cual, contando con los parámetros DHstd, se hace uso del comando SerialLink del toolbox de Peter Corke. Al graficar el robot en la primera posición, la cual es Home, se obtiene lo siguiente:
+
+![robot home](https://github.com/aholguinr/Lab4_Robotica_Caipa_Holguin/blob/main/Imagenes/Home.png?raw=true)
+
+De dónde se pueden destacar varias cosas, primero, al utilizar los comandos del toolbox de Peter Corke resulta un robot con la misma orientación de Home como la planteada inicialmente, por lo cual se verifica además la correcta definición de los parámetros DHstd. Otra cosa es que el último marco de referencia tiene la orientación de tipo _noa_, ya que el eje z cumple la función de eje de aproximación, mientras que el eje y cumple las veces del de apertura y el eje x el normal. Si esto no hubiera sido así, se hubiera podido corregir haciendo uso del comando Tool, el cual toma el robot y cambia la orientación o posición (o ambas) del TCP respecto al último marco de referencia definido con el comando Link, de la siguiente forma:
+
+```
+Robot.tool=MTH_TCP->o_6
+```
+Otra cosa es que cada una de las articulaciones tiene el marco de referencia graficado, esto se hace con fin de verificar los parámetros y la correcta orientación de los marcos respecto a los movimientos que se ejercen en la vida real, para esto se hace uso del siguiente código, en donde la primera línea después del _Hold on_ permite graficar el último marco de referencia, el cual estará al graficar el robot en todas las posiciones para hacerse una idea de cómo queda la herramienta al mover las articulaciones, mientras que las demás sirven para graficar los otros marcos haciendo uso de las matrices intermedias de la cinemática directa, que en el toolbox se definen como matrices A y que se evaluan en un vector _q_ dado que tiene los valores solicitados de los ángulos de las articulaciones.
+
+```
+Robot_q_1.plot(q_1,'view',[-30 30], 'jointdiam',2);
+hold on 
+trplot(eye(4),'rgb','arrow','length',15,'frame','0')
+axis([repmat([-40 40],1,2) 0 40])
+Robot_q_1.teach()
+M= eye(4);
+for i=1:Robot_q_1.n-1
+    M = M * Li(i).A(q_1(i));
+    trplot(M,'rgb','arrow','frame',num2str(i),'length',15)
+end
+hold off
+```
+
+Por último, se puede obtener la matriz de transformación del sistema de muchas formas, obteniendo las matrices A con el toolbox y multiplicandolas todas entre ellas, haciendo uso del comando A modificado, en la cual se le ingresa un arreglo con los números de las articulaciones entre las cuales se quiere calcular la matriz y otro arreglo con los valores _q_ para dichas articulaciones, algo como:
+
+```
+Robot.A([1,2,3,4,5,6],[theta_1 theta_2 theta_3 theta_4 theta_5 theta_6])
+``` 
+
+O el método utilizado en este caso, que es, contando con la tabla de parámetros DHstd, simplemente se hace cada matriz A, que se hace multiplicando cuatro matrices, dos de rotación y dos de traslación, en el siguiente orden:
+
+```
+A_i=trotz(theta_i+offset)*transl(0,0,d_i)*transl(a_i,0,0)*trotx(alpha_i)
+```
+Y finalmente multiplicarlas todas entre ellas. De forma simbólica se tiene la siguiente matriz:
+```math
+a^2+b^2=c^2
+```
 
 
 ### Desarrollo código python
