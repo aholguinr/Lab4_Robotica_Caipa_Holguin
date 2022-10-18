@@ -249,7 +249,7 @@ Con todo y lo anterior, se debe ejecutar el archivo lab4.py. Luego, al usuario l
 
 Click en la siguiente página para dirigirse al video:
 
-[![video](https://i9.ytimg.com/vi_webp/i1MiGquxebQ/mqdefault.webp?sqp=COCCqJoG&rs=AOn4CLCMm6SIbKCXUOZCQjj9puunpE8E6g)](https://www.youtube.com/watch?v=i1MiGquxebQ)
+[![video](https://i9.ytimg.com/vi/i1MiGquxebQ/mq2.jpg?sqp=CPTZuJoG&rs=AOn4CLAVTB0ZCJDKBn-vdfqoDLnwnua8Aw)](https://www.youtube.com/watch?v=i1MiGquxebQ)
 
 #### Caso 1
 
